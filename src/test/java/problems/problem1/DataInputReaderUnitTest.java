@@ -23,12 +23,16 @@ public class DataInputReaderUnitTest {
 		
 		Assert.assertEquals("1234", data.get(0));
 		Assert.assertEquals("Clink", data.get(1));
-		Assert.assertEquals("1234", data.get(2));
+		Assert.assertEquals("Anthony", data.get(2));
 	}
 
 	@Test
-	public void javaArgsArrayMayContainDataPastTheFirstSegmentJoinItIfTheInputWasMistyped() {
-
+	public void javaArgsArrayMayContainDataPastTheFirstSegmentJoinItIfTheInputWasMistypedInTheConsole() {
+		List<String> data = dataInputReader.read("1234,Clink,","Anthony");
+		
+		Assert.assertEquals("1234", data.get(0));
+		Assert.assertEquals("Clink", data.get(1));
+		Assert.assertEquals("Anthony", data.get(2));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
