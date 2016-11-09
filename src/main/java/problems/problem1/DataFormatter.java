@@ -1,5 +1,5 @@
 package problems.problem1;
 
-public class InputReader {
+public class DataFormatter {
 
 }
