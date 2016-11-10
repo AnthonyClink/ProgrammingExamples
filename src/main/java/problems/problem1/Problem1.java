@@ -8,9 +8,9 @@ package problems.problem1;
  */
 public class Problem1 {
 	
-	public static void main(String[] args){
-		
 	
+	public static void main(String[] args){
+		new DataOutputWriter().writeData(new DataInputReader().read(args));
 	}
 	
 	
