@@ -37,7 +37,14 @@ public class DataInputReaderUnitTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void nullDataIsNotAllowedInAnyField() {
-
+		
+		try{
+			dataInputReader.read("");
+			Assert.fail("We should have thrown an exception");
+		}catch(IllegalArgumentException e){
+			dataInputReader.read((String)null);
+		}
+		
 	}
 	
 	public void ifNullOrBlankDataIsPresentThrowAnIllegalArgumentException() {
