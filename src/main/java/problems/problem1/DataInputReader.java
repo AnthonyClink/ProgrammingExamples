@@ -12,7 +12,8 @@ public class DataInputReader {
 
 	public DataInputReader() {
 		this(new Settings());
-		this.getSettings().setSeparator(DEFAULT_SEPARATOR);
+		this.getSettings().setFieldSeparator(DEFAULT_SEPARATOR);
+		this.getSettings().setDataFormatter(new DataFormatter());
 	}
 
 	public DataInputReader(Settings settings) {
@@ -30,7 +31,7 @@ public class DataInputReader {
 		}
 		
 		//we are not doing this with split, just in case someone sets a separator with like a .(dot) or some other regexy thing;
-		final StringTokenizer stringTokenizer = new StringTokenizer(input, getSettings().getSeparator());
+		final StringTokenizer stringTokenizer = new StringTokenizer(input, getSettings().getFieldSeparator());
 		
 		List<String> data = new ArrayList<>();
 		
@@ -47,15 +48,15 @@ public class DataInputReader {
 
 	public final static class Settings{
 		
-		private volatile String separator;
+		private volatile String fieldSeparator;
 		private volatile DataFormatter dataFormatter;
 		
-		public String getSeparator() {
-			return separator;
+		public String getFieldSeparator() {
+			return fieldSeparator;
 		}
 		
-		public void setSeparator(String separator){
-			this.separator = separator;
+		public void setFieldSeparator(String fieldSeparator){
+			this.fieldSeparator = fieldSeparator;
 		}
 
 		public DataFormatter getDataFormatter() {

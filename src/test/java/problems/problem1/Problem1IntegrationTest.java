@@ -9,22 +9,8 @@ import org.junit.Test;
 
 public class Problem1IntegrationTest {
 
-	@Test
-	public void deleteMe(){
-		//write a sample program that hyjacks the System.out so we can fully test all functionality of the application
-		
-
-		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-		PrintStream printStream = new PrintStream(byteArrayOutputStream);
-		System.setOut(printStream);
-
-		System.out.println("Hello world");
-
-		Assert.assertEquals("Hello world", new String(byteArrayOutputStream.toByteArray(), Charset.defaultCharset()).trim());
-
-		
-		
-	}
+	private static final String INPUT_DATA = "1234,Clink,Anthony";
+	private static final String EXPECTED_OUTPUT_DATA = "Anthony,Clink,4321";
 	
 	@Test
 	public void theProgramShouldOutputTheProperResult() {
@@ -33,9 +19,9 @@ public class Problem1IntegrationTest {
 		PrintStream printStream = new PrintStream(byteArrayOutputStream);
 		System.setOut(printStream);
 
-		System.out.println("Hello world");
-
-		Assert.assertEquals("Hello world", new String(byteArrayOutputStream.toByteArray(), Charset.defaultCharset()).trim());
+		Problem1.main(new String[]{INPUT_DATA});
+		
+		Assert.assertEquals(EXPECTED_OUTPUT_DATA, new String(byteArrayOutputStream.toByteArray(), Charset.defaultCharset()).trim());
 
 	}
 
