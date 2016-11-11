@@ -49,8 +49,5 @@ public class DataInputReaderUnitTest {
 		
 	}
 	
-	public void ifNullOrBlankDataIsPresentThrowAnIllegalArgumentException() {
-		
-	}
 	
 }
