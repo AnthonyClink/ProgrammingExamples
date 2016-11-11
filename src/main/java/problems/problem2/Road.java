@@ -1,10 +1,13 @@
 package problems.problem2;
 
+import java.util.List;
+
 public class Road {
 
 	private String id;
 	private String name;
 	private USState usState;
+	private List<Accedent> accedents;
 
 	public String getId() {
 		return id;
@@ -28,6 +31,14 @@ public class Road {
 
 	public void setUsState(USState usState) {
 		this.usState = usState;
+	}
+
+	public List<Accedent> getAccedents() {
+		return accedents;
+	}
+
+	public void setAccedents(List<Accedent> accedents) {
+		this.accedents = accedents;
 	}
 
 }
